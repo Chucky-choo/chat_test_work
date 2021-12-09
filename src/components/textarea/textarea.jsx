@@ -4,12 +4,11 @@ import Message from "./message/message";
 import style from './textarea.module.css'
 
 const Textarea = () => {
-	console.log('rerender')
 	const [messageData, setMessageData] = useState(store.getState().message)
 
 	store.subscribe(() => {
-		console.log('subscribe')
-			setMessageData(store.getState().message)})
+		setMessageData(store.getState().message)
+	})
 
 	return (
 		<div className={style.wrapper}>
