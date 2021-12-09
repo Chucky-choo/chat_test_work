@@ -1,6 +1,7 @@
 import React from 'react';
-import store from "../../redux/store";
-import {deleteMessage} from "../../redux/chat-reducer";
+import store from "../../../redux/store";
+import {deleteMessage} from "../../../redux/chat-reducer";
+import style from './message.module.css'
 
 const Message = ({messageData, index}) => {
 
@@ -9,9 +10,14 @@ const Message = ({messageData, index}) => {
 	}
 
 	return (
-		<div onClick={() => deleteMes(index)} key={index}>
+		<div
+			className={style.wrapper}
+			onClick={() => deleteMes(index)}
+		>
 			<p>{messageData.message}</p>
-			<p>{messageData.data.getHours()}</p>
+			<div className={style.date}>
+				{`${messageData.data.getHours()}.${messageData.data.getMinutes()}`}
+			</div>
 		</div>
 	);
 };

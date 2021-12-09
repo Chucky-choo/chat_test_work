@@ -1,0 +1,28 @@
+.wrapper {
+    margin: 0 14px 17px;
+    padding: 12px 12px 4px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: fit-content;
+    background: #252525;
+    border-radius: 15px;
+}
+
+p {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.8;
+    font-size: 14px;
+    margin-right: 13px;
+}
+
+.date {
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    align-self: flex-end;
+    font-size: 10px;
+    text-align: right;
+    letter-spacing: 0.5px;
+    opacity: 0.3;
+}
