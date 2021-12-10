@@ -1,12 +1,13 @@
 import React from 'react';
-import store from "../../../redux/store";
 import {deleteMessage} from "../../../redux/chat-reducer";
 import style from './message.module.css'
+import {useDispatch} from "react-redux";
 
 const Message = ({messageData, index}) => {
+	const dispatch = useDispatch()
 
 	const deleteMes = (index) => {
-		store.dispatch(deleteMessage(index))
+		dispatch(deleteMessage(index))
 	}
 
 	return (

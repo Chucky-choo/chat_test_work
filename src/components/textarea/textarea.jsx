@@ -1,14 +1,9 @@
-import store from "../../redux/store";
-import {useState} from "react";
 import Message from "./message/message";
 import style from './textarea.module.css'
+import {useSelector} from "react-redux";
 
 const Textarea = () => {
-	const [messageData, setMessageData] = useState(store.getState().message)
-
-	store.subscribe(() => {
-		setMessageData(store.getState().message)
-	})
+	const messageData = useSelector(store => store.message)
 
 	return (
 		<div className={style.wrapper}>

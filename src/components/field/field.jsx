@@ -1,10 +1,12 @@
 import {useState} from 'react';
-import store from "../../redux/store";
 import {addMessage} from "../../redux/chat-reducer";
 import style from './field.module.css'
+import {useDispatch} from "react-redux";
 
 const Field = () => {
+	const dispatch = useDispatch()
 	const [text, setText] = useState(`Okay I'm waiting  👍`)
+
 
 	const onChange = (e) => {
 		setText(e.target.value)
@@ -12,7 +14,7 @@ const Field = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault()
-		store.dispatch(addMessage(text))
+		dispatch(addMessage(text))
 		setText('')
 	}
 
