@@ -19,12 +19,12 @@ const chatReducer = (state = initialState, action) => {
 
 		case DELETE_MESSAGE: {
 			const newState = [...state]
-			newState.splice(action.index, 1);
+			newState.splice(action.payload, 1);
 			return newState
 		}
 
 		case ADD_MESSAGE: {
-			return [...state, {message: action.message, data: new Date()}];
+			return [...state, {message: action.payload, data: new Date()}];
 		}
 
 		default:
@@ -32,7 +32,7 @@ const chatReducer = (state = initialState, action) => {
 	}
 }
 
-export const deleteMessage = (index) => ({type: DELETE_MESSAGE, index})
-export const addMessage = (message) => ({type: ADD_MESSAGE, message})
+export const deleteMessage = (payload) => ({type: DELETE_MESSAGE, payload})
+export const addMessage = (payload) => ({type: ADD_MESSAGE, payload})
 
 export default chatReducer
